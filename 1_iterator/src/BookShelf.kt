@@ -1,24 +1,16 @@
-class BookShelf : Aggreate {
-    private val books : Array<Book?>
-    private var last : Int
-
-
-    constructor(maxsize : Int) {
-        this.books = arrayOfNulls(maxsize)
-        this.last  = 0
-    }
+class BookShelf() : Aggreate {
+    private val books = mutableListOf<Book>()
 
     fun getBookAt(index : Int) : Book {
-        return this.books[index]!!
+        return this.books.get(index)
     }
 
     fun appendBook(book : Book) {
-        this.books[this.last] = book
-        this.last = this.last + 1
+        this.books.add(book)
     }
 
     fun getLength() : Int {
-        return this.last
+        return this.books.size
     }
 
     override fun iterator() : Iterator {

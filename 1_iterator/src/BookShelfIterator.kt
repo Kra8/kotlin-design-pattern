@@ -1,11 +1,6 @@
-class BookShelfIterator : Iterator {
-    private val bookShelf : BookShelf
-    private var index : Int
-
-    constructor(bookShelf : BookShelf)  {
-        this.bookShelf  = bookShelf
-        this.index      = 0
-    }
+class BookShelfIterator(bookShelf : BookShelf) : Iterator {
+    private val bookShelf   = bookShelf
+    private var index       = 0
 
     override fun hasNext() : Boolean {
         return index < bookShelf.getLength()

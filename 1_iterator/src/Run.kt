@@ -1,6 +1,5 @@
-
 fun main(args: Array<String>) {
-    val bookShelf = BookShelf(4)
+    val bookShelf = BookShelf()
 
     bookShelf.appendBook(Book("ネットワークはなぜつながるのか"))
     bookShelf.appendBook(Book("プログラムはなぜ動くのか"))
