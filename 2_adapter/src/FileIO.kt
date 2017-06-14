@@ -1,7 +1,5 @@
 package adapter
 
-import java.io.IOException
-
 interface FileIO {
     fun readFromFile(filename : String)
     fun writeToFile(filename : String)
