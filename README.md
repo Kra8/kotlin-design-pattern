@@ -7,3 +7,5 @@
 2. [Adapter](https://github.com/Kra8/kotlin-design-pattern/tree/master/2_adapter/src)
 
 3. [Template Method](https://github.com/Kra8/kotlin-design-pattern/tree/master/3_template_method/src)
+
+4. [Factory Method](https://github.com/Kra8/kotlin-design-pattern/tree/master/4_factory_method/src)

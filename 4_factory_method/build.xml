@@ -1,0 +1,28 @@
+<project name="FactoryMethod" default="compile" basedir=".">
+    <property name="kotlin.lib" value="/usr/local/kotlinc/lib" />
+    <property name="package" value="factory.method" />
+    <property name="output" value="${basedir}/dist" />
+
+    <typedef resource="org/jetbrains/kotlin/ant/antlib.xml" classpath="${kotlin.lib}/kotlin-ant.jar"/>
+
+    <target name="clean">
+        <delete dir="${output}"/>
+        <delete file="${package}.jar" />
+    </target>
+
+    <target name="compile">
+        <antcall target="clean" />
+        <kotlinc src="${basedir}/src/" output="${output}"/>
+    </target>
+
+    <target name="jar">
+        <kotlinc src="${basedir}/src/" output="${package}.jar" />
+    </target>
+
+    <target name="test">
+        <antcall target="jar" />
+        <exec executable="java" spawn="false" >
+            <arg line="-jar ${package}.jar" />
+        </exec>
+    </target>
+</project>
